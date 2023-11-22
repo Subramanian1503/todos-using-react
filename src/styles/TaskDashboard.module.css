@@ -1,8 +1,9 @@
 .tasksDashboardContainer {
   height: 680px;
   width: 500px;
-  border: 2px solid var(--layer_color);
+  /* border: 2px solid var(--layer_color); */
   border-radius: 10px;
   padding-left: 10px;
   padding-top: 10px;
+  background-image: linear-gradient(rgb(96, 96, 246), rgb(125, 125, 173));
 }
