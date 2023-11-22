@@ -1,0 +1,41 @@
+.dateMenuContainer {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 100px;
+  width: 468px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;;
+}
+
+.leftPartion {
+  /* border: 2px solid black; */
+}
+
+.rightPartition {
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  & img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.QuoteContainer {
+  font-size: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  /* border: 2px solid black; */
+}
+
+.DateInfoContainer {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}

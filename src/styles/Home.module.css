@@ -1,0 +1,23 @@
+:root {
+  --container_background: aqua;
+  --layer_color: black;
+}
+
+.homeContainer {
+  background-color: var(--container_background);
+  height: 700px;
+  width: 1488px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.statisticsContainer {
+  height: 680px;
+  width: 500px;
+  border: 2px solid var(--layer_color);
+  border-radius: 10px;
+}
