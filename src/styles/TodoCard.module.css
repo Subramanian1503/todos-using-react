@@ -1,0 +1,60 @@
+.todoCardContainer {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 2.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* backdrop-filter: blur(10px); */
+  background-color: rgba(67, 65, 65, 0.005);
+  /* filter: blur(10px); */
+}
+
+.leftPartition {
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  height: 95px;
+  width: 250px;
+  display: flex;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  /* filter: blur(8px); */
+}
+
+.todo_icon_container {
+}
+
+.todo_icon {
+  height: 40px;
+  width: 40px;
+}
+
+.todo_content {
+  margin-left: 10px;
+  /* border: 2px solid black; */
+  width: 200px;
+  font-size: 25px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.rightPartition {
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}

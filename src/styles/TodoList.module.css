@@ -1,0 +1,10 @@
+.todoListContainer {
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  height: 425px;
+  width: 468px;
+  margin-top: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  list-style: none;
+}
