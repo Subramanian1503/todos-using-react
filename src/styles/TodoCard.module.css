@@ -1,8 +1,8 @@
 .todoCardContainer {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 10px;
   height: 100px;
-  width: inherit;
+  width: 470px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   padding-left: 10px;
   padding-right: 10px;
   /* backdrop-filter: blur(10px); */
-  background-color: rgba(67, 65, 65, 0.005);
+  background-color: rgba(0, 0, 0, 0.19); /* Black partially transparent background */
   /* filter: blur(10px); */
 }
 
@@ -41,9 +41,16 @@
   margin-left: 10px;
   /* border: 2px solid black; */
   width: 200px;
-  font-size: 25px;
+  font-size: 15px;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-overflow: ellipsis;
+}
+
+.todo_title {
+  text-overflow: ellipsis;
+  max-height: 50px;
+  word-wrap: break-word;
 }
 
 .rightPartition {
