@@ -35,7 +35,8 @@ function TodoCard({ todoItem }) {
         <div className={styles.todo_icon_container}>
           <img
             className={styles.todo_icon}
-            src="https://cdn-icons-png.flaticon.com/128/3719/3719216.png"
+            src="https://cdn-icons-png.flaticon.com/128/2111/2111056.png"
+            alt="delete_icon"
           />
         </div>
       </div>

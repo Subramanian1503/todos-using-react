@@ -4,5 +4,14 @@ import TasksDashboard from "./TaskDashboard";
 import DateMenu from "./DateMenu";
 import TodoList from "./TodoList";
 import TodoCard from "./TodoCard";
+import AddTodoWidget from "./AddTodoWidget";
 
-export { App, Home, TasksDashboard, DateMenu, TodoList, TodoCard };
+export {
+  AddTodoWidget,
+  App,
+  Home,
+  TasksDashboard,
+  DateMenu,
+  TodoList,
+  TodoCard,
+};

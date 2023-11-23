@@ -1,7 +1,7 @@
 const customFetch = async (url, { body, ...customConfig }) => {
   // Construct required headers
   const headers = {
-    // "content-type": "application/x-www-form-urlencoded",
+    "Content-type": "application/json; charset=UTF-8",
   };
 
   // Construct the required config with the passed headers
@@ -14,15 +14,12 @@ const customFetch = async (url, { body, ...customConfig }) => {
   };
 
   // If body is present encode the body content
-  if (body) {
-    config.body = getFormBody(body);
-  }
+  // if (body) {
+  //   config.body = getFormBody(body);
+  // }
   try {
     // Fetch data from server using URL and configurations passed
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos",
-      config
-    )
+    const response = await fetch(url, config)
       .then((response) => response.json())
       .then((data) => {
         return {
@@ -63,5 +60,13 @@ const getFormBody = (params) => {
 export const getAllTodos = () => {
   return customFetch("https://jsonplaceholder.typicode.com/todos", {
     method: "GET",
+  });
+};
+
+// Create todo
+export const createTodo = (createTodoRequest) => {
+  return customFetch("https://jsonplaceholder.typicode.com/todos", {
+    method: "POST",
+    body: JSON.stringify(createTodoRequest),
   });
 };

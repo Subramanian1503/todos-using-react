@@ -1,4 +1,5 @@
 import styles from "../styles/TaskDashboard.module.css";
+import AddTodoWidget from "./AddTodoWidget";
 import DateMenu from "./DateMenu";
 import TodoList from "./TodoList";
 
@@ -12,6 +13,7 @@ function TasksDashboard() {
       <TodoList />
 
       {/* create todo task widgets */}
+      <AddTodoWidget />
     </div>
   );
 }
