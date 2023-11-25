@@ -1,36 +1,38 @@
 import { useState } from "react";
 
-import todoCardStyles from "../styles/TodoCard.module.css";
 import styles from "../styles/AddTodoWidget.module.css";
-import { createTodo } from "../api";
+import { useTodo } from "../hooks";
 
 function AddTodoWidget() {
   const [todoRequest, setTodoRequest] = useState("");
+  const todoContext = useTodo();
 
   const handleCreateTodo = () => {
-    const createTodoItem = async () => {
-      // Create todo
-      const createTodoRequest = {
-        title: todoRequest,
-        id: 1,
-        userId: 1,
-        completed: "false",
-      };
+    // const createTodoItem = async () => {
+    //   // Create todo
+    //   const createTodoRequest = {
+    //     title: todoRequest,
+    //     id: 1,
+    //     userId: 1,
+    //     completed: "false",
+    //   };
 
-      const response = await createTodo(createTodoRequest);
+    //   const response = await createTodo(createTodoRequest);
 
-      console.log("Response", response);
+    //   console.log("Response", response);
 
-      // Add the request to the list
-    };
+    //   // Add the request to the list
+    // };
 
     if (todoRequest) {
-      createTodoItem();
+      todoContext.createTodo(todoRequest);
+
+      setTodoRequest("");
     }
   };
 
   return (
-    <div class={styles.addTodoWidgetContainer}>
+    <div className={styles.addTodoWidgetContainer}>
       <div className={styles.leftPartition}>
         {/* todoList Icon */}
         <div className={styles.todo_icon_container}>

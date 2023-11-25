@@ -5,9 +5,9 @@ import TasksDashboard from "./TaskDashboard";
 class Home extends React.Component {
   render() {
     return (
-      <div class={styles.homeContainer}>
+      <div className={styles.homeContainer}>
         {/* left statistics area */}
-        <div class={styles.statisticsContainer}></div>
+        <div className={styles.statisticsContainer}></div>
 
         {/* right tasks area */}
         <TasksDashboard />

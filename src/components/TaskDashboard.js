@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 
 function TasksDashboard() {
   return (
-    <div class={styles.tasksDashboardContainer}>
+    <div className={styles.tasksDashboardContainer}>
       {/* Day information */}
       <DateMenu />
 
