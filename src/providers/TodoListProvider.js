@@ -6,9 +6,8 @@ const initialTodoListState = {
   loadingTodoList: true,
   todoList: [],
   createTodo: () => {},
-  getTodo: () => {},
-  updateTodo: () => {},
-  deleteTodo: () => {},
+  updateTodoCompletedStatus: () => {},
+  deleteTodoItemFromList: () => {},
 };
 
 // Create context

@@ -19,6 +19,6 @@
 .statisticsContainer {
   height: 680px;
   width: 500px;
-  border: 2px solid var(--layer_color);
+  /* border: 2px solid var(--layer_color); */
   border-radius: 10px;
 }

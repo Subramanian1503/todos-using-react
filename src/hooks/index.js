@@ -1,5 +1,10 @@
 import { useContext } from "react";
-import { createTodoItem, getAllTodoItems } from "../api";
+import {
+  createTodoItem,
+  getAllTodoItems,
+  updateCompleteStatus,
+  deleteTodoItem,
+} from "../api";
 import { TodoListContext } from "../providers/TodoListProvider";
 import { useState, useEffect } from "react";
 
@@ -12,14 +17,14 @@ export const useTodo = () => {
 export const UseTodoListProvider = () => {
   // Define the required states which this provider will return as informations
   const [todoItems, setTodoItems] = useState([]);
-//   const [loading, setLoading] = setLoading(true);
+  //   const [loading, setLoading] = setLoading(true);
 
   // Define the useEffect method which will load required information to the state
   useEffect(() => {
     // Get all the todo list items
     const fetchTodoItems = async () => {
       //Set the loading component to true as we are now starting the loading of Todos from the API
-    //   setLoading(true);
+      //   setLoading(true);
 
       // Load the required information from the server
       const response = await getAllTodoItems();
@@ -27,7 +32,7 @@ export const UseTodoListProvider = () => {
       setTodoItems(response.data);
 
       //Set the loading component to false as the loading of Todos from the API is done in the previous step
-    //   setLoading(false);
+      //   setLoading(false);
     };
 
     // Fetch all the required information and load that into the state of the client
@@ -41,21 +46,62 @@ export const UseTodoListProvider = () => {
     // Create todo request
     const createTodoRequest = {
       title: todoRequest,
-      id: 1,
+      id: 201,
       userId: 1,
       completed: false,
     };
 
-    await createTodoItem(createTodoRequest);
-
     // Add the request to the todo list state
 
     setTodoItems([createTodoRequest, ...todoItems]);
+
+    await createTodoItem(createTodoRequest);
+  };
+
+  // Update complete status of the todo
+  const updateTodoCompletedStatus = async (requestedtodoItem) => {
+    const expectedTodoItemBody = {
+      ...requestedtodoItem,
+      completed: !requestedtodoItem.completed,
+    };
+
+    // Getting requested todoItem Id
+    const requestedTodoItemId = requestedtodoItem.id;
+
+    // Construct new todoItem
+    const newTodoItems = todoItems.map((todoItem) => {
+      if (requestedTodoItemId === todoItem.id) {
+        return expectedTodoItemBody;
+      }
+      return todoItem;
+    });
+
+    // Set the updated todoItems
+    setTodoItems(newTodoItems);
+
+    // Make the API call to change complete status of todoItem in server
+    await updateCompleteStatus(expectedTodoItemBody);
+  };
+
+  // Delete todo item from state
+  const deleteTodoItemFromList = async (requestedTodoItem) => {
+    // Filter the todo item which was not deleted
+    const newTodoItems = todoItems.filter(
+      (todoItem) => todoItem.id !== requestedTodoItem.id
+    );
+
+    // Set the new todoItemlist
+    setTodoItems(newTodoItems);
+
+    // Make the API call to change complete status of todoItem in server
+    await deleteTodoItem(requestedTodoItem);
   };
 
   return {
     // loadingTodoList: loading,
     todoList: todoItems,
     createTodo: createTodo,
+    updateTodoCompletedStatus: updateTodoCompletedStatus,
+    deleteTodoItemFromList: deleteTodoItemFromList,
   };
 };

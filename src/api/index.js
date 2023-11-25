@@ -57,3 +57,24 @@ export const createTodoItem = (createTodoRequest) => {
     body: JSON.stringify(createTodoRequest),
   });
 };
+
+// Update complete status of Todo
+export const updateCompleteStatus = (expectedTodoItemBody) => {
+  return customFetch(
+    `https://jsonplaceholder.typicode.com/todos/${expectedTodoItemBody.id}`,
+    {
+      method: "PATCH",
+      body: JSON.stringify(expectedTodoItemBody),
+    }
+  );
+}
+
+  // Delete a todo item
+  export const deleteTodoItem = (requestedTodoItem) => {
+    return customFetch(
+      `https://jsonplaceholder.typicode.com/todos/${requestedTodoItem.id}`,
+      {
+        method: "DELETE",
+      }
+    ); 
+  }

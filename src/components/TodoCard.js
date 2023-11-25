@@ -1,11 +1,26 @@
 import styles from "../styles/TodoCard.module.css";
+import { useTodo } from "../hooks";
 
 function TodoCard({ todoItem }) {
+  const todoListProvider = useTodo();
+
+  // Method implementations for the todo card
+  const toggleCompletedStatusOnClick = () => {
+    todoListProvider.updateTodoCompletedStatus(todoItem);
+  };
+
+  const handleDeleteTodoOnClick = () => {
+    todoListProvider.deleteTodoItemFromList(todoItem);
+  };
+
   return (
     <div className={styles.todoCardContainer}>
       <div className={styles.leftPartition}>
         {/* todoList Icon */}
-        <div className={styles.todo_icon_container}>
+        <div
+          className={styles.todo_icon_container}
+          onClick={toggleCompletedStatusOnClick}
+        >
           {todoItem.completed ? (
             <img
               className={styles.todo_icon}
@@ -32,7 +47,10 @@ function TodoCard({ todoItem }) {
       </div>
 
       <div className={styles.rightPartition}>
-        <div className={styles.todo_icon_container}>
+        <div
+          className={styles.todo_icon_container}
+          onClick={handleDeleteTodoOnClick}
+        >
           <img
             className={styles.todo_icon}
             src="https://cdn-icons-png.flaticon.com/128/2111/2111056.png"

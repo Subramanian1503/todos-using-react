@@ -7,10 +7,10 @@ class Home extends React.Component {
     return (
       <div className={styles.homeContainer}>
         {/* left statistics area */}
-        <div className={styles.statisticsContainer}></div>
+        <TasksDashboard />
 
         {/* right tasks area */}
-        <TasksDashboard />
+        <div className={styles.statisticsContainer}></div>
       </div>
     );
   }
