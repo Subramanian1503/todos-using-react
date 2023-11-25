@@ -1,0 +1,18 @@
+.todoProgressContainer {
+  height: 200px;
+  width: 200px;
+  /* border: 2px solid black; */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Black partially transparent background */
+  border-radius: 20px;
+}

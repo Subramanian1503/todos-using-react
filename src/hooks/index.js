@@ -17,14 +17,14 @@ export const useTodo = () => {
 export const UseTodoListProvider = () => {
   // Define the required states which this provider will return as informations
   const [todoItems, setTodoItems] = useState([]);
-  //   const [loading, setLoading] = setLoading(true);
+  const [loading, setLoading] = useState(true);
 
   // Define the useEffect method which will load required information to the state
   useEffect(() => {
     // Get all the todo list items
     const fetchTodoItems = async () => {
       //Set the loading component to true as we are now starting the loading of Todos from the API
-      //   setLoading(true);
+      setLoading(true);
 
       // Load the required information from the server
       const response = await getAllTodoItems();
@@ -32,7 +32,7 @@ export const UseTodoListProvider = () => {
       setTodoItems(response.data);
 
       //Set the loading component to false as the loading of Todos from the API is done in the previous step
-      //   setLoading(false);
+      setLoading(false);
     };
 
     // Fetch all the required information and load that into the state of the client
@@ -98,7 +98,7 @@ export const UseTodoListProvider = () => {
   };
 
   return {
-    // loadingTodoList: loading,
+    loadingTodoList: loading,
     todoList: todoItems,
     createTodo: createTodo,
     updateTodoCompletedStatus: updateTodoCompletedStatus,

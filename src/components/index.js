@@ -5,6 +5,8 @@ import DateMenu from "./DateMenu";
 import TodoList from "./TodoList";
 import TodoCard from "./TodoCard";
 import AddTodoWidget from "./AddTodoWidget";
+import Loader from "./Loader";
+import StatisticsWidget from "./StatisticsWidget";
 
 export {
   AddTodoWidget,
@@ -14,4 +16,6 @@ export {
   DateMenu,
   TodoList,
   TodoCard,
+  Loader,
+  StatisticsWidget,
 };

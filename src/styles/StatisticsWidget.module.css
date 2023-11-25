@@ -1,0 +1,19 @@
+.statisticsWidgetContainer {
+  height: 680px;
+  width: 500px;
+  /* border: 2px solid var(--layer_color); */
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  /* background-image: linear-gradient(rgb(96, 96, 246), rgb(125, 125, 173)); */
+  /* background: transparent; */
+  /* background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); Black partially transparent background */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}

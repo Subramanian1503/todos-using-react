@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import TasksDashboard from "./TaskDashboard";
+import StatisticsWidget from "./StatisticsWidget";
 
 class Home extends React.Component {
   render() {
@@ -10,7 +11,8 @@ class Home extends React.Component {
         <TasksDashboard />
 
         {/* right tasks area */}
-        <div className={styles.statisticsContainer}></div>
+        {/* <div className={styles.statisticsContainer}></div> */}
+        <StatisticsWidget />
       </div>
     );
   }
