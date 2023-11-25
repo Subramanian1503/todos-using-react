@@ -5,6 +5,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+App -> Home
+
+Home -> TodoDashboard
+
+Home -> Statisticsboard
+
+TodoDashboard -> calendar
+
+TodoDashboard -> Todo list
+
+TodoDashboard -> createTodo
+
+Statisticsboard-> Progress bar
+
+Statisticsboard -> QuotesContainer
 
 ### `npm start`
 
